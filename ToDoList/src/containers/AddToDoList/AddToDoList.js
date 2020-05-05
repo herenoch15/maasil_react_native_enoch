@@ -1,13 +1,12 @@
 import React, {Component,Fragment}  from 'react'
 import {
-    Keyboard,
+    
     StatusBar,
     SafeAreaView,
     View,
     Text,
     TextInput,
-    TouchableOpacity,
-    ImageBackground} from 'react-native'
+    TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
 
 import ScreenDimensions from "../../configs/ScreenDimensions"
@@ -26,15 +25,20 @@ class AddToDoList extends Component
         this.state=
         {
             nameTache:"",
-            active:1,
+            active:0,
         }
 
     }
 
+    addActiive=async()=>
+    {
+        await this.setState({active:this.state.active==1?0:1})
+    }
     _addTache=async()=>
     {
        let idTache=this.props.toDoList.length+1
-        let newTache= {"id":idTache,"title":this.state.nameTache,"date":"2020-05-06","active":0}
+       // await this.setState({active:this.state.active==1?0:1})
+        let newTache= {"id":idTache,"title":this.state.nameTache,"date":"2020-05-06","active":this.state.active}
 
         const action = { type: "ADD_TO_DO_LIST", value:newTache}
         await this.props.dispatch(action)
@@ -56,13 +60,15 @@ class AddToDoList extends Component
                             <TextInput  
                               placeholder="Entrer le nom du tache"
                               value={this.state.nameTache}
-                              onChangeText={(value)=>{this.setState({nameTache:value})}} />
+                              onChangeText={(value)=>{this.setState({nameTache:value})}}
+                              style={styles.viewR} />
                         </View>
                         <View style={styles.itemsTache}>
-                            <Text style={styles.nameLabel}>Choix</Text>
-                            <View style={styles.viewChoix}>
-                               
+                            <Text style={styles.nameLabel}>Active :</Text>
+                            <View  style={styles.viewR}>
+                            <TouchableOpacity  style={styles.viewR}  onPress={this.addActiive} style={[styles.active,{backgroundColor:this.state.active?colors.blue2:colors.white}]}></TouchableOpacity> 
                             </View>
+
                         </View>
                         <TouchableOpacity style={styles.btnAddTache} onPress={()=>{this._addTache()}}>
                             <Text style={styles.textAddTache}>Enregistrer</Text>

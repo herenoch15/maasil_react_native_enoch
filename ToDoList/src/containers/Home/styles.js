@@ -35,6 +35,7 @@ export default styles = StyleSheet.create(
     flatListItems:
     {
         width:"100%",
+        height:ScreenDimensions.heightScreen*0.75
        // paddingHorizontal:ScreenDimensions.widthScreen*0.03,
     },
 })

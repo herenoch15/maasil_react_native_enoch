@@ -23,12 +23,18 @@ export default styles = StyleSheet.create(
     itemsTache:
     {
         flexDirection:"row",
-        justifyContent:"flex-start",
+        justifyContent:"center",
         marginBottom:ScreenDimensions.heightScreen*0.02,
     },
     nameLabel:
     {
         width:ScreenDimensions.widthScreen*0.3,
+   
+        textAlign:"center",
+    },
+    viewR:
+    {
+        width:ScreenDimensions.widthScreen*0.35,
     },
     btnAddTache:
     {
@@ -46,6 +52,14 @@ export default styles = StyleSheet.create(
     {
         color:colors.white,
         fontSize:ScreenDimensions.widthScreen*0.04,
+    },
+    active:
+    {
+        width:ScreenDimensions.widthScreen*0.06,
+        height:ScreenDimensions.widthScreen*0.06,
+        borderRadius:(ScreenDimensions.widthScreen*0.06)/2,
+        borderWidth:ScreenDimensions.widthScreen*0.003,
+        borderColor:colors.blue2,
     },
 
 })

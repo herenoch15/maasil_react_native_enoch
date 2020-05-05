@@ -33,6 +33,18 @@ export default styles = StyleSheet.create(
         borderRadius:(ScreenDimensions.widthScreen*0.06)/2,
         borderWidth:ScreenDimensions.widthScreen*0.003,
         borderColor:colors.blue2,
+    },
+    btnDelete:
+    {
+        marginRight:ScreenDimensions.widthScreen*0.02,
+        backgroundColor:colors.blue2,
+        borderRadius:(ScreenDimensions.widthScreen*0.06)/2,
+        padding:ScreenDimensions.widthScreen*0.02,
+        justifyContent:"center",
+    },
+    textDelete:
+    {
+        color:colors.white,
     }
    
 })

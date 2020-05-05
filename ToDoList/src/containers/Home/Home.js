@@ -43,7 +43,9 @@ class Home extends Component
 
                         <FlatList
                             style={styles.flatListItems}
-                            data={this.props.toDoList}
+                            data={this.props.toDoList.sort(function (a, b) {
+                                return a.id-b.id
+                            })}
                             keyExtractor={(item)=>item.id.toString()}
                             renderItem={({item}) => <ItemToDoList navigation={this.props.navigation}  items={item} />}
                             onEndReachedThreshold={0.5}

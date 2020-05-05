@@ -23,17 +23,36 @@ Reducers = (state = initialeState, action) =>
             return nextState
         }
 
-            case 'ADD_ACTIVE': 
-           {
-               let list=state.toDoList.filter(function (item) {return item.id !=action.value.id})
+        case 'ADD_ACTIVE': 
+        {
+            //let list=
             const nextState = {
                 ...state,
-                toDoList: [...list, action.value]
+                toDoList: [...state.toDoList.filter(function (item) {return item.id !=action.value.id}), action.value]
             }
             return nextState   
-        } 
-
-            
+         }   
+         /*case 'DELETE_TACHE': 
+         {
+             const nextState = {
+                 ...state,
+                 toDoList:state.toDoList.filter(function (item) {return item.id !=action.value.id})
+             }
+             return nextState
+         }*/
+         case "DELETE_TACHE":
+        {
+            console.log("DELETE")
+            nextState = {
+                ...state,
+                toDoList:state.toDoList.filter(function (item) {
+                    return item.id !=parseInt(action.value)
+                })
+            }
+            return nextState 
+        }
+         
+         
         default: 
             return state
     }
