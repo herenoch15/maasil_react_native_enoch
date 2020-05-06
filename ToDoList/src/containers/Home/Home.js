@@ -1,18 +1,13 @@
 import React, {Component,Fragment}  from 'react'
 import {
-    Keyboard,
     StatusBar,
     SafeAreaView,
-    ScrollView,
     View,
     Text,
-    TextInput,
     TouchableOpacity,
-    FlatList,
-    ImageBackground} from 'react-native'
+    FlatList,} from 'react-native'
 import {connect} from 'react-redux'
 import ItemToDoList from "./ItemToDoList/ItemToDoList"
-import ScreenDimensions from "../../configs/ScreenDimensions"
 import styles from "./styles"
 
 class Home extends Component

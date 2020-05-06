@@ -1,15 +1,15 @@
 import React, {Component,Fragment}  from 'react'
 import {
-    
     StatusBar,
     SafeAreaView,
     View,
+    AsyncStorage,
     Text,
     TextInput,
     TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
 
-import ScreenDimensions from "../../configs/ScreenDimensions"
+
 import styles from "./styles"
 
 class AddToDoList extends Component
@@ -27,6 +27,17 @@ class AddToDoList extends Component
             nameTache:"",
             active:0,
         }
+        this.idTacheNew=0
+
+    }
+    componentDidMount=async()=>
+    {
+       let idTacheFIn=await AsyncStorage.getItem("idTacheFIn")
+       if(idTacheFIn==null)
+       {
+            await AsyncStorage.setItem("idTacheFIn",this.props.toDoList.length.toString())
+       }
+       this.idTacheNew=parseInt(await AsyncStorage.getItem("idTacheFIn"))+1
 
     }
 
@@ -36,12 +47,11 @@ class AddToDoList extends Component
     }
     _addTache=async()=>
     {
-       let idTache=this.props.toDoList.length+1
-       // await this.setState({active:this.state.active==1?0:1})
-        let newTache= {"id":idTache,"title":this.state.nameTache,"date":"2020-05-06","active":this.state.active}
+        let newTache= {"id":this.idTacheNew,"title":this.state.nameTache,"date":"2020-05-06","active":this.state.active}
 
         const action = { type: "ADD_TO_DO_LIST", value:newTache}
         await this.props.dispatch(action)
+        await AsyncStorage.setItem("idTacheFIn",this.idTacheNew.toString())
         this.props.navigation.pop()
     }
     render()

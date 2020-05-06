@@ -1,5 +1,6 @@
 
-import {Platform,Dimensions, StyleSheet } from 'react-native';
+import {StyleSheet } from 'react-native'
+import ScreenDimensions from "../../configs/ScreenDimensions"
 export default styles = StyleSheet.create(
 {
     body:

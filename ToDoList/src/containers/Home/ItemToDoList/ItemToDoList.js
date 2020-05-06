@@ -1,12 +1,9 @@
 import React, {Component}  from 'react'
 import {
-    Platform,
     View,
     Text,
     TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
-
-import ScreenDimensions from '../../../configs/ScreenDimensions';
 import styles from './styles'
 class ItemToDoList extends Component 
 {
