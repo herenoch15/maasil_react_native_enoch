@@ -11,7 +11,6 @@ import {
     FlatList,
     ImageBackground} from 'react-native'
 import {connect} from 'react-redux'
-
 import ItemToDoList from "./ItemToDoList/ItemToDoList"
 import ScreenDimensions from "../../configs/ScreenDimensions"
 import styles from "./styles"
@@ -28,8 +27,6 @@ class Home extends Component
         super(props)
 
     }
-
-
     render()
     {
       return (
