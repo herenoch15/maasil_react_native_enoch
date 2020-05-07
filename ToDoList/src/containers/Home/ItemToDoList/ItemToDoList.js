@@ -28,7 +28,7 @@ class ItemToDoList extends Component
                     <Text style={styles.numero}>N° {this.props.items.id}</Text>
                     <Text numberOfLines={1} style={styles.title}>{this.props.items.title}</Text>
                     <TouchableOpacity style={styles.btnDelete} onPress={()=>{this._clickDeleteTache()}}>
-                        <Text style={styles.textDelete}>Suprimer</Text>
+                        <Text style={styles.textDelete}>Supprimer</Text>
                     </TouchableOpacity>
                     <View style={[styles.active,{backgroundColor:this.props.items.active?colors.blue2:colors.white,}]}></View>  
             </TouchableOpacity>)
