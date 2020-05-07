@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import ScreenDimensions from '../../../configs/ScreenDimensions';
-import colors from '../../../configs/colors';
+import ScreenDimensions from 'app/src/configs/ScreenDimensions';
+import colors from 'app/src/configs/colors';
 export default styles = StyleSheet.create(
 {
     rowItems:

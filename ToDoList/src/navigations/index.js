@@ -1,6 +1,6 @@
 import { createStackNavigator } from "react-navigation"
-import Home from "../containers/Home/Home" //screen liste
-import AddToDoList from  "../containers/AddToDoList/AddToDoList" //screen ajout 
+import Home from "app/src/containers/Home/Home" //screen liste
+import AddToDoList from  "app/src/containers/AddToDoList/AddToDoList" //screen ajout 
 const AppNavigator = createStackNavigator
 (
     {

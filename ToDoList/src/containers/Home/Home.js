@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
     FlatList,} from 'react-native'
 import {connect} from 'react-redux'
-import ItemToDoList from "./ItemToDoList/ItemToDoList"
+import ItemToDoList from "app/src/containers/Home/ItemToDoList/ItemToDoList"
 import styles from "./styles"
 
 class Home extends Component

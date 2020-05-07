@@ -1,6 +1,7 @@
 
 import {StyleSheet } from 'react-native'
-import ScreenDimensions from "../../configs/ScreenDimensions"
+import ScreenDimensions from "app/src/configs/ScreenDimensions"
+import colors from 'app/src/configs/colors';
 export default styles = StyleSheet.create(
 {
     body:
@@ -25,17 +26,26 @@ export default styles = StyleSheet.create(
     {
         flexDirection:"row",
         justifyContent:"center",
+        alignItems:"center",
         marginBottom:ScreenDimensions.heightScreen*0.02,
     },
     nameLabel:
     {
         width:ScreenDimensions.widthScreen*0.3,
-   
-        textAlign:"center",
+        textAlign:"right",
+        marginRight:ScreenDimensions.widthScreen*0.02,
     },
     viewR:
     {
-        width:ScreenDimensions.widthScreen*0.35,
+        width:ScreenDimensions.widthScreen*0.5,
+        alignItems:"center",
+    },
+    textInputAddTache:
+    {
+        width:ScreenDimensions.widthScreen*0.5,
+        alignItems:"center",
+        height:ScreenDimensions.heightScreen*0.038,
+   
     },
     btnAddTache:
     {
@@ -45,7 +55,7 @@ export default styles = StyleSheet.create(
         alignItems:"center",
         justifyContent:"center",
         height:ScreenDimensions.heightScreen*0.06,
-        marginTop:ScreenDimensions.heightScreen*0.03,
+        marginTop:ScreenDimensions.heightScreen*0.01,
         marginBottom:ScreenDimensions.heightScreen*0.03,
         borderRadius:(ScreenDimensions.heightScreen*0.1)/5,
     },

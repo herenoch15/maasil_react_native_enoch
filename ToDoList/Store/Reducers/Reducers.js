@@ -32,14 +32,6 @@ Reducers = (state = initialeState, action) =>
             }
             return nextState   
          }   
-         /*case 'DELETE_TACHE': 
-         {
-             const nextState = {
-                 ...state,
-                 toDoList:state.toDoList.filter(function (item) {return item.id !=action.value.id})
-             }
-             return nextState
-         }*/
          case "DELETE_TACHE":
         {
             console.log("DELETE")

@@ -8,8 +8,6 @@ import {
     TextInput,
     TouchableOpacity} from 'react-native'
 import {connect} from 'react-redux'
-
-
 import styles from "./styles"
 
 class AddToDoList extends Component
@@ -66,19 +64,18 @@ class AddToDoList extends Component
                   <View style={styles.body}>
                         <Text style={styles.titlePage}>Création d'un tache</Text>
                         <View style={styles.itemsTache}>
-                            <Text style={styles.nameLabel}>Nom du Tache</Text>
+                            <Text style={styles.nameLabel}>Nom du Tache :</Text>
                             <TextInput  
                               placeholder="Entrer le nom du tache"
                               value={this.state.nameTache}
                               onChangeText={(value)=>{this.setState({nameTache:value})}}
-                              style={styles.viewR} />
+                              style={styles.textInputAddTache} />
                         </View>
                         <View style={styles.itemsTache}>
                             <Text style={styles.nameLabel}>Active :</Text>
                             <View  style={styles.viewR}>
-                            <TouchableOpacity  style={styles.viewR}  onPress={this.addActiive} style={[styles.active,{backgroundColor:this.state.active?colors.blue2:colors.white}]}></TouchableOpacity> 
+                                <TouchableOpacity  style={styles.viewR}  onPress={this.addActiive} style={[styles.active,{backgroundColor:this.state.active?colors.blue2:colors.white}]}></TouchableOpacity> 
                             </View>
-
                         </View>
                         <TouchableOpacity style={styles.btnAddTache} onPress={()=>{this._addTache()}}>
                             <Text style={styles.textAddTache}>Enregistrer</Text>
